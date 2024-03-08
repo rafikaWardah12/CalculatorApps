@@ -7,12 +7,10 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 class CalculatorViewModel : ViewModel() {
-
     //Private set = dapat mengubah state dari luar tapi masih bisa diakses dn dibaca
     //Menghindari mengubah state dari UI (Make Background Thread)
     var state by mutableStateOf(CalculatorState())
         private set
-
 //    private var operation
 
     fun onAction(actions: CalculatorActions) {
@@ -63,7 +61,6 @@ class CalculatorViewModel : ViewModel() {
         ) {
             state = state.copy(number1 = state.number2 + ".")
         }
-
     }
 
     //Kita tidak ingin mengklik tanda operasi di awal, karena initial state awalnya masih empty
